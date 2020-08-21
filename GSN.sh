@@ -63,8 +63,8 @@ generated_nicknames=()
 echo -e "Generowanie nicków...\n"
 
 for ((i=1; i<=how_many_times; i++)); do
- adjective=$(echo "${adjectives[$(($RANDOM % ${#adjectives[@]}))]}")
- noun=$(echo "${nouns[$(($RANDOM % ${#nouns[@]}))]}")
+ adjective=${adjectives[$(($RANDOM % ${#adjectives[@]}))]}
+ noun=${nouns[$(($RANDOM % ${#nouns[@]}))]}
  if [[ $(($RANDOM % 2)) -eq 1 ]]; then
   noun="_${noun}"
  else
