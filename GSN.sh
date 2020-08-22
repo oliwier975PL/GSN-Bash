@@ -87,9 +87,9 @@ for ((i=1; i<=how_many_times; i++)); do
  echo -e "\e[96m>> $generated_nick"
 done
 
-echo -e "\n\e[92mGotowe."
+echo -e "\n\e[92mGotowe.\e[39m"
 
 if [[ ${save_to_file,} == 'y' ]]; then
  printf '%s\n' "${generated_nicknames[@]}" > output.txt
- echo "Zapisano nicki do pliku."
+ echo -e "\e[92mZapisano nicki do pliku.\e[39m"
 fi
