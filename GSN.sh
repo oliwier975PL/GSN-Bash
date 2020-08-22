@@ -91,5 +91,5 @@ echo -e "\n\e[92mGotowe."
 
 if [[ ${save_to_file,} == 'y' ]]; then
  printf '%s\n' "${generated_nicknames[@]}" > output.txt
- echo -e "Zapisano nicki do pliku.\e[39m"
+ echo "Zapisano nicki do pliku."
 fi
