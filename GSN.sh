@@ -1,6 +1,7 @@
 #!/bin/bash
-VERSION='1.0.1-Bash'
+VERSION='1.0.2-Bash'
 AUTHOR='oliwier975PL & workonfire'
+GSN_DIR=$(dirname "$(readlink -f "$0")")
 
 echo -ne "\033]0;GSN\007"
 
@@ -58,11 +59,11 @@ echo -n "Usunąć polskie znaki? (y/N): "
 read strip_polish_chars
 
 if [[ ${strip_polish_chars,} == 'y' ]]; then
- adjectives=(`iconv -f utf-8 -t ascii//translit dictionaries/adjectives.txt`)
- nouns=(`iconv -f utf-8 -t ascii//translit dictionaries/nouns.txt`)
+ adjectives=(`iconv -f utf-8 -t ascii//translit "${GSN_DIR}"/dictionaries/adjectives.txt`)
+ nouns=(`iconv -f utf-8 -t ascii//translit "${GSN_DIR}"/dictionaries/nouns.txt`)
 else
- readarray -t adjectives < dictionaries/adjectives.txt
- readarray -t nouns < dictionaries/nouns.txt
+ readarray -t adjectives < "${GSN_DIR}"/dictionaries/adjectives.txt
+ readarray -t nouns < "${GSN_DIR}"/dictionaries/nouns.txt
 fi
 
 generated_nicknames=()
